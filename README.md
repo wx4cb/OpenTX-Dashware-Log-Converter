@@ -1,5 +1,37 @@
 # OpenTX-Dashware-Log-Converter
-Converts the OpenTX Logs stored by inav on the transmitter into a format dashware can read properly
+Power Shell Script - Converts the OpenTX Logs stored by inav on the transmitter into a format dashware can read properly.
+
+Includes crossfire telemetry additions.
+
+Please make sure that you set the header in the same order as found on your open TX logs and remove all extraneous brackets etc (such as (mah), (@) etc) and also make sure you enclose each element in a single quote set.
+
+runs fine on Windows 10 x86/x64 but you must do the following to enable scripts to be run on your windows machine.
+
+Installation instructions
+-------------------------
+
+Due to microsofts increased stupidity with running scripts, you must set powershell to be allowed to run unsigned scripts.
+
+To change the execution policy to run PowerShell scripts, use these steps:
+
+    *   Open Start.
+    
+    *   Search for PowerShell, right-click the top result, and select the Run as administrator option.
+    *   Type the following command to allow scripts to run and press Enter:
+       Set-ExecutionPolicy Unrestricted
+
+    *    Type A and press Enter (if applicable).
+
+
+How to use
+----------
+
+Run companion and exprt the particular flight you are interested in from your opentx logfile for that day
+
+Now you can run the script by calling:
+    OpenTX2Dashware.ps1 <Name of OTX Logfile>
+    
+You then should have a processed CSV in that directory which you can then import into Dashware
 
 License: BSD 3 Clause (modified - see below for details)
 
